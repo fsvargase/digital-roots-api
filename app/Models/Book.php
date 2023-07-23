@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Author;
 
 class Book extends Model
 {
@@ -20,4 +21,9 @@ class Book extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
+    }
 }

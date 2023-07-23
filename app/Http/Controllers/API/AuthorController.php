@@ -14,6 +14,12 @@ class AuthorController extends Controller
     public function index()
     {
         //
+        $authors = Author::all();
+        foreach ($authors as $author) {
+            $author->books;
+        }
+
+        return $authors;
     }
 
     /**
