@@ -36,6 +36,11 @@ class BookController extends Controller
     public function show(Book $book)
     {
         //
+        if($book){
+            $book= $book->load('author');
+            return $book;
+        }
+        return null;
     }
 
     /**
